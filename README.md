@@ -1,27 +1,7 @@
 # veri_madenciligi
 numpy-pandas-matplotlib
 
-# ANALİZ ÇIKTILARI - 1
-
-#  Veri Seti Tanıtımı
-Üzerinde çalışılan veri seti Kaggle.com sitesinden alınan “Starter_Balaji Fast Food Sales” isimli veri setidir. Yerel bir restoranın verilerinden verildiği bu veri seti 1000 satır ve 10 sütundan oluşmaktadır. Bu sütunlar; siparişin kimliği, siparişin tarihi, ürünün adı, ürünün türü, ürünün fiyatı, sipariş edilen ürün miktarı, siparişin tutarı, ödeme türü, siparişi alan kişinin cinsiyet bilgisi ve satış yapılan zaman bilgisini tutmaktadır. Veri setinin ilk 5 verisi, satır ve sütun bilgisi, parametre bilgisi ve isimleri Şekil 1’de verilmiştir. Yerel bir restorandaki siparişlerin çeşitli verilerini gördüğümüz bu veri setinde günün farklı zamanlarında en çok gelir getiren ürünleri, ürünlere gelen zamdan sonraki kar oranını, günde belli sayının üstünde sipariş alma olasılığı sorularına cevap aranılacaktır.
-
-#  Eksik ve Aykırı Veri Analizi
-Veri setinde sütunlardaki eksik değerlerin sayısı elde edildi. Eksik değerlerin “transaction_type” sütununda yani ödeme türünün verildiği sütunda olduğu görülmektedir. Buradaki veri türleri tespit edildiği üzere Cash ve Online olmak üzere 2 çeşittir. Burada eksik değerleri giderebilmek için bu değerler görüldüğü gibi “Other” seçeneği ile doldurulmuş ve “eksiksiz” adı verilen yeni veri setine tanımlanmıştır. Oluşturulan yeni veri setinde eksik değerlerin giderildiği görülmektedir.
-
-# Normalizasyon
-Veri setinde siparişlerin alındığı tarih bilgileri görülmektedir. Bu veri setinde belli bir sayıdan fazla sipariş alma durumunun gözle tespit edilmesinin zor olacağı anlaşılmaktadır. Bu sebeple 3’ten fazla sipariş alınan günler listelenmiştir. Burada önce günlerin tekrar sayıları alınarak günde kaç sipariş alındığı bilgisi gözlenmiştir. Sonrasında üçten fazla sipariş alınan günler yani üçten fazla sipariş girilen günler ekrana getirilmiştir. Gün bilgisinin uzun olması ve dağılımının daha rahat tespit edebilmesi için Şekil 18’de veriler normalize edilmiştir. Bunun sonucunda günde 4 sipariş görme olasılığının en yüksek ve günde 8 sipariş görme olasılığının en düşük olduğu tespit edilmiştir.
-
-#  Goupby Analizleri
-Günün hangi vaktinde hangi ürünün daha çok gelir getirdiğini öğrenebilmek için Şekil 19’da satış zamanı, ürün adı ve satış zamanı kullanılarak gruplama işlemi yapılmıştır. Burada üstte yazılan kod satırında analiz aşağıya doğru yapılır. Tüm değerleri yan yana görebilmek ve yerden tasarruf edebilmek için ikinci kod satırı aktif edilmiştir. Burada “eksiksiz” olarak adlandırılan veri seti satış zamanlarına göre ürünlerin getirdiği toplam tutarı göstermesi için şekildeki kod satırları kullanılarak gruplanmış ve tablo görüntülenmiştir. Analiz sonucunda sabahları en çok sandviç ve soğuk kahve, öğlen saatlerinde soğuk kahve ve frankie ürünlerinin daha çok gelir getirdiği görülmüştür. Akşam, gece ve gece yarısı saatlerinde frankie ve sandviç ürünlerinin daha çok gelir elde ettikleri görülmüştür. Bu veriler sonucunda frankie ve sandviç ürünlerinin diğer ürünlere göre restorana daha çok gelir getirdikleri ve işletme için önemli ürünler olduğu sonuçlarına varılmaktadır.
-Başta ortaya konulan ürünlere zam yapılması halinde ortaya çıkan kar oranını hesaplamak amacıyla Şekil 20’de ürünlere 5 birimlik zam yapılması ile yeni fiyatı gösterecek olan zamlı ürün sütunu ve yeni zamlı fiyatlı sipariş tutarını gösterecek olan zamlı toplam fiyat sütunları eklenmiştir. Böylelikle sütun sayısı veri setinde 12 olarak güncellenmiştir. Bu sütunlar oluşturulurken önceki ürün fiyatına 5 birim ekleme yapılmış ve satılan ürün adedi ile yeni oluşturulan zamlı ürün fiyatı çarpılarak yeni zamlı satış toplamı elde edilmiştir. Kar oranın ve toplam satış fiyatını elde etmek için ürünler gruplandırılarak toplam zamlı fiyatlar ile toplam zamsız fiyatlar görüntülenmiştir. Tablonun en altına yeni satır eklenerek üst satırların toplam bilgisi incelenmiştir. Tabloya yeni sütun girişi yapılarak burada elde edilen bilgilerden kar oranı hesaplanmıştır. Hesaplanan bilgiler ile birlikte tablo incelendiğinde toplam gelirin zam sonucunda kar oranının 16 olduğu görülmektedir. Sadece 5 birimlik bir zamdan elde edilen oran işletme için iyi bir kazanç olarak değerlendirilir.
-
-# Benzerlik ve Mesafe
-Satılan ürün sayısı, alınan sipariş tutarı ve ürün fiyatı arasında bağlantı ve benzerlik kontrolü yapılması amacıyla kosinüs benzerliği uygulanmıştır. Bu değerin sıfıra daha yakın olması sebebiyle bu parametreler arasında bir benzerlik olduğu ve mesafe değerinin uzak olduğu sonucuna varılmıştır.
-
-# ###########
-
-# ANALİZ ÇIKTILARI - 2
+# BETON ANALİZİ ÇIKTILARI
 
 # Veri Seti Hakkında
 
